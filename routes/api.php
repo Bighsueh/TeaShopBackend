@@ -17,3 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/teas', 'TeaController@show')->name('get_teas');
+
+Route::get('/tickets', 'TicketController@show')->name('get_tickets');
+Route::get('/tickets/{id}/{items}/{total}', 'TicketController@store')->name('create_tickets');
